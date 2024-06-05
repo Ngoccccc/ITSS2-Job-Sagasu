@@ -162,6 +162,18 @@ function AppAppBar() {
                     </Grid>
                   </NavLink>
                 </MenuItem>
+                <Divider
+                  orientation="vertical"
+                  flexItem
+                  sx={{ borderColor: "black" }}
+                />
+                <MenuItem sx={{ py: "6px", px: "12px" }}>
+                  <NavLink to="/create-post" className="nav-link">
+                    <Grid sx={{ display: "flex", alignItems: "center" }}>
+                      Tạo bài tìm việc
+                    </Grid>
+                  </NavLink>
+                </MenuItem>
               </Box>
             </Box>
             <Box
