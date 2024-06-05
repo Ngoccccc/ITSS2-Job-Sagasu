@@ -1,6 +1,6 @@
 import React from 'react';
-import {  MessageOutlined, HeartOutlined, DeleteOutlined } from '@ant-design/icons';
-import { Avatar, List, Space, Row, Col, Button, Tag } from 'antd';
+import {  HeartOutlined } from '@ant-design/icons';
+import { List, Space, Row, Col, Button, Tag } from 'antd';
 import '../styles/JobInfo.css';
 import data from '../data/job_item';
 
@@ -26,11 +26,6 @@ const JobList = () => (
             renderItem={(item) => (
             <List.Item
                 key={item.title}
-                actions={[
-                <IconText icon={HeartOutlined} text="" key="list-vertical-star-o" />,
-                <IconText icon={DeleteOutlined} text="" key="list-vertical-like-o" />,
-                <IconText icon={MessageOutlined} text="62" key="list-vertical-message" />,
-                ]}
             >
                 <Row className="job-list-item">
                 <Col span={4}>
@@ -50,7 +45,10 @@ const JobList = () => (
                 </Col>
                 <Col span={4} className="job-salary-col">
                     <p className="job-salary">{item.salary}</p>
-                    <Button type="primary">Ứng tuyển</Button>
+                    <Button className="button-submit" type="primary">Ứng tuyển</Button>
+                    <div className="icon-heart">
+                      <IconText icon={HeartOutlined} text="" key="list-vertical-star-o" />
+                    </div>
                 </Col>
                 </Row>
             </List.Item>

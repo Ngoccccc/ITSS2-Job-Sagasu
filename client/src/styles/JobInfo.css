@@ -33,7 +33,7 @@ body{
   }
   
   .job-salary-col {
-    text-align: right;
+    text-align: center;
   }
   
   .job-salary {
@@ -42,4 +42,24 @@ body{
     margin-bottom: 8px;
     font-weight: 400;
   }
-  
+  .button-submit{
+    width: 80%;
+  }
+  .icon-heart {
+    margin-top: 8px;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    height: 100%;
+}
+.icon-heart .anticon {
+  color: #555;
+  transition: color 0.3s, background-color 0.3s;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.icon-heart .anticon:hover {
+  color: #52c41a;
+  background-color: #b1cee9;
+}
