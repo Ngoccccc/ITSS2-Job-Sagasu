@@ -22,7 +22,7 @@ const Layout = ({
         <meta name="keywords" content={keywords} />
       </Helmet>
       <Header />
-      <main style={{ minHeight: "70vh", backgroundColor: backgroundColor }}>
+      <main style={{ minHeight: "10vh", backgroundColor: backgroundColor }}>
         <Grid
           container
           justifyContent="center"
