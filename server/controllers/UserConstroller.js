@@ -13,7 +13,7 @@ class UserController {
 
 
     // query 
-    async create(req, res, next) {
+    async validator(req, res, next) {
         try {
             const userEmail = req.body.email;
             const newStatus = req.body.status;

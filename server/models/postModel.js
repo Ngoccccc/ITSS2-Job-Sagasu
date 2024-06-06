@@ -25,15 +25,12 @@ const postSchema = new mongoose.Schema({
     {
       company: {
         type: String,
-        required: true
       },
       role: {
         type: String,
-        required: true
       },
       start: {
         type: Date,
-        required: true
       },
       end: {
         type: Date
@@ -51,15 +48,12 @@ const postSchema = new mongoose.Schema({
     {
       institution: {
         type: String,
-        required: true
       },
       degree: {
         type: String,
-        required: true
       },
       start: {
         type: Date,
-        required: true
       },
       end: {
         type: Date
