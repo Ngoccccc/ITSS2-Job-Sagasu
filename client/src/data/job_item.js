@@ -4,7 +4,7 @@ const data = Array.from({ length: 30 }).map((_, i) => ({
     company: 'Sun Asterisk Inc.',
     location: 'Hà Nội',
     daysLeft: 24,
-    updated: '8 giờ trước',
+    experience: `${i%10 + 1} năm`,
     position: 'Junior',
     salary: `${15 + i} - ${30 + i} triệu`,
     avatar: `https://api.dicebear.com/7.x/miniavs/svg?seed=${i}`,

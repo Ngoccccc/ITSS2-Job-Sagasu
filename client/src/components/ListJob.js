@@ -50,7 +50,7 @@ const JobList = () => {
                         <Chip label={item.location} variant="outlined" />
                         <Chip label={item.position} variant="outlined" />
                         <Chip label={`Còn ${item.daysLeft} ngày để ứng tuyển`} variant="outlined" />
-                        <Chip label={`Cập nhật ${item.updated}`} variant="outlined" />
+                        <Chip label={`Kinh nghiệm ${item.experience}`} variant="outlined" />
                       </Typography>
                     </>
                   }
