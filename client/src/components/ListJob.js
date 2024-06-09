@@ -18,14 +18,14 @@ const JobList = () => {
   const getPosts = async () => {
     try {
       const response = await axios.get(`/api/recruitment/get-posts`);
-      console.log('Response data:', response.data);
+      console.log("Response data:", response.data);
       if (response.data && Array.isArray(response.data)) {
         setListJob(response.data);
       } else {
-        console.error('Unexpected response data format:', response.data);
+        console.error("Unexpected response data format:", response.data);
       }
     } catch (error) {
-      console.error('Error fetching posts:', error);
+      console.error("Error fetching posts:", error);
     }
   };
 
@@ -36,14 +36,14 @@ const JobList = () => {
   const calculateRemainingDays = (timeEnd) => {
     const today = dayjs();
     const endDate = dayjs(timeEnd);
-    const diff = endDate.diff(today, 'day');
-    return diff >= 0 ? `Còn ${diff} ngày để ứng tuyển` : 'Hết hạn';
+    const diff = endDate.diff(today, "day");
+    return diff >= 0 ? `Còn ${diff} ngày để ứng tuyển` : "Hết hạn";
   };
 
   const calculateHoursSinceUpdate = (updatedAt) => {
     const now = dayjs();
     const updatedDate = dayjs(updatedAt);
-    const diff = now.diff(updatedDate, 'hour');
+    const diff = now.diff(updatedDate, "hour");
     return diff;
   };
 
@@ -78,7 +78,9 @@ const JobList = () => {
                   <Tag>{item.location}</Tag>
                   <Tag>{item.position.name}</Tag>
                   <Tag>{calculateRemainingDays(item.timeEnd)}</Tag>
-                  <Tag>{`Cập nhật ${calculateHoursSinceUpdate(item.updatedAt)} giờ trước`}</Tag>
+                  <Tag>{`Cập nhật ${calculateHoursSinceUpdate(
+                    item.updatedAt
+                  )} giờ trước`}</Tag>
                 </p>
               </Col>
               <Col span={4} className="job-salary-col">
@@ -101,5 +103,4 @@ const JobList = () => {
     </div>
   );
 };
-
 export default JobList;
