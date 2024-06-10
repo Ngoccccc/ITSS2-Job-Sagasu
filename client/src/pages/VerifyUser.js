@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../components/Layout/Layout";
 import "../styles/VerifyUserStyles.css";
+import {
+  Avatar,
+  Button,
+  Paper,
+  Card,
+  CardContent,
+} from "@mui/material";
 
 const VerifyUser = () => {
   const [showAlert, setShowAlert] = useState(false);
@@ -51,54 +58,71 @@ const VerifyUser = () => {
           </div>
         </div>
       )}
-      <div className="verify-user"style={{ marginLeft: "200px" }}>
-        <div className="div">
-          <div className="overlap-group">
-            <div className="frame">
-              <div className="nh-th">
-                <div className="text-wrapper-2">Thẻ nhân viên</div>
-                <img
-                  className="image"
-                  alt="Image"
-                  src={user.companyPhoto}
-                />
+      <Paper elevation={3} sx={{
+        width: "100%",
+        py: 3,
+        px: 5,
+      }}>
+        <div className="verify-user">
+          <div className="div">
+            <Paper>
+              <div className="frame">
+                <div className="nh-th">
+                  <div className="text-wrapper-2">Thẻ nhân viên</div>
+                  <img
+                    className="image"
+                    alt="Image"
+                    src={user.companyPhoto}
+                  />
+                </div>
+              </div>
+              <div className="text-wrapper-3">{user.name}</div>
+              <div className="group" >
+                <Avatar alt="Remy Sharp" src={user.avata} sx={{ width: 180, height: 180 }} />
+              </div>
+              <div className="text-wrapper-4">{user.company}</div>
+              <p className="p">{user.companyaddress}</p>
+            </Paper>
+            <div className="frame-2">
+              <div className="frame-3"></div>
+              <div className="frame-4">
+                <CardContent>
+                  <div className="text-wrapper-6">Họ và tên: {user.name}</div>
+                </CardContent>
+                <CardContent>
+                  <div className="text-wrapper-6">Email: {user.email}</div>
+                </CardContent>
+                <CardContent><div className="text-wrapper-6">Số điện thoại: {user.phone}</div></CardContent>
+                <CardContent><div className="text-wrapper-6">Công ty: {user.company}</div></CardContent>
+                <CardContent><div className="text-wrapper-6">Địa chỉ công ty: {user.companyaddress}</div></CardContent>
               </div>
             </div>
-            <div className="text-wrapper-3">{user.name}</div>
-            <img className="group" alt="Group" src={user.avata} />
-            <div className="text-wrapper-4">{user.company}</div>
-            <p className="p">{user.companyaddress}</p>
-          </div>
-          <div className="frame-2">
-            <div className="frame-3"></div>
-            <div className="frame-4">
-              <div className="text-wrapper-6">Họ và tên: {user.name}</div>
-              <div className="text-wrapper-6">Email: {user.email}</div>
-              <div className="text-wrapper-6">Số điện thoại: {user.phone}</div>
-              <div className="text-wrapper-6">Công ty: {user.company}</div>
-              <div className="text-wrapper-6">Địa chỉ công ty: {user.companyaddress}</div>
+            <div className="frame-5" sx={{
+              mt: 3,
+              marginLeft: "auto",
+              display: "block",
+            }}>
+
+              <div className="frame-6">
+                <div className="text-wrapper-7">Ảnh chụp cầm CCCD</div>
+                <img className="group-2" alt="Group" src={user.faceImage} />
+              </div>
+              <div className="frame-6">
+                <div className="text-wrapper-7">Ảnh CCCD</div>
+                <img className="group-2" alt="Group" src={user.idPhoto} />
+              </div>
             </div>
-          </div>
-          <div className="frame-5">
-            <div className="frame-6">
-              <div className="text-wrapper-7">Ảnh chụp cầm CCCD</div>
-              <img className="img" alt="Group" src={user.faceImage} />
+            <div className="group-3">
+              <Button variant="contained" size="large" onClick={handleRefuse} className="button">
+                Chấp nhận
+              </Button>
+              <Button variant="contained" size="large" onClick={handleRefuse} color="error" className="button">
+                Từ chối
+              </Button>
             </div>
-            <div className="frame-6">
-              <div className="text-wrapper-7">Ảnh CCCD</div>
-              <img className="group-2" alt="Group" src={user.idPhoto} />
-            </div>
-          </div>
-          <div className="group-3">
-            <button className="button-refuse" onClick={handleRefuse}>
-              <img className="group-4" alt="Refuse" src="images/refuse1.png" />
-            </button>
-            <button className="button-agree" onClick={handleAgree}>
-              <img className="group-5" alt="Agree" src="images/agree1.png" />
-            </button>
           </div>
         </div>
-      </div>
+      </Paper>
     </Layout>
   );
 };
