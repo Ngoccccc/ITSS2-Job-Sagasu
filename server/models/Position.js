@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 // Declare the Schema of the Mongo model
-var categorySchema = new mongoose.Schema({
+var positionSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -13,4 +13,4 @@ var categorySchema = new mongoose.Schema({
 });
 
 //Export the model
-module.exports = mongoose.model("Category", categorySchema);
+module.exports = mongoose.model("Position", positionSchema);

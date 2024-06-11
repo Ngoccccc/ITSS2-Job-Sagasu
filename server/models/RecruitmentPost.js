@@ -12,6 +12,10 @@ var recruitmentPostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    company: {
+      type: String,
+      required: true,
+    },
     description: {
       type: String,
       required: true,
@@ -28,10 +32,28 @@ var recruitmentPostSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    position: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Position",
+      required: true,
+    },
+    category: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Category",
+      required: true,
+    },
+    level: {
+      type: String,
+      require: true,
+    },
+    timeEnd: {
+      type: String,
+      required: true,
+    },
     status: {
       type: String,
       enum: ["waiting", "published", "disabled"],
-      require: true,
+      default: "published",
     },
   },
   {
