@@ -1,39 +1,38 @@
 [
-    {
-      "avata": "images/avata1.png",
-      "name": "Nguyễn Hữu Linh",
-      "email": "huulinh@example.com",
-      "phone": "0123456789",
-      "company": "T3M",
-      "companyaddress": "Số 1 Đại Cồ Việt - Bách Khoa - Hà Nội",
-      "faceImage": "images/cccd1.png",
-      "idPhoto": "images/cccd2.png",
-      "companyPhoto": "images/employeeidcard1.png",
-      "status": 0
-    },
-    {
-      "avata": "images/avata1.png",
-      "name": "Trần Văn A",
-      "email": "tranvana@example.com",
-      "phone": "0987654321",
-      "company": "ABC Corp",
-      "companyaddress": "Số 2 Nguyễn Trãi - Thanh Xuân - Hà Nội",
-      "faceImage": "images/cccd1.png",
-      "idPhoto": "images/cccd2.png",
-      "companyPhoto": "images/employeeidcard1.png",
-      "status": 1
-    },
-    {
-      "avata": "images/avata1.png",
-      "name": "Trần Văn C",
-      "email": "tranvanC@example.com",
-      "phone": "0943254321",
-      "company": "ABC Corp",
-      "companyaddress": "Số 223 Nguyễn Trãi - Thanh Xuân - Hà Nội",
-      "faceImage": "images/cccd1.png",
-      "idPhoto": "images/cccd2.png",
-      "companyPhoto": "images/employeeidcard1.png",
-      "status": 1
-    }
+  {
+    "avata": "images/avata1.png",
+    "name": "Nguyễn Hữu Linh",
+    "email": "huulinh@example.com",
+    "phone": "0123456789",
+    "company": "T3M",
+    "companyaddress": "Số 1 Đại Cồ Việt - Bách Khoa - Hà Nội",
+    "faceImage": "images/cccd1.png",
+    "idPhoto": "images/cccd2.png",
+    "companyPhoto": "images/employeeidcard1.png",
+    "status": 0
+  },
+  {
+    "avata": "images/avata1.png",
+    "name": "Trần Văn A",
+    "email": "tranvana@example.com",
+    "phone": "0987654321",
+    "company": "ABC Corp",
+    "companyaddress": "Số 2 Nguyễn Trãi - Thanh Xuân - Hà Nội",
+    "faceImage": "images/cccd1.png",
+    "idPhoto": "images/cccd2.png",
+    "companyPhoto": "images/employeeidcard1.png",
+    "status": 1
+  },
+  {
+    "avata": "images/avata1.png",
+    "name": "Trần Văn C",
+    "email": "tranvanC@example.com",
+    "phone": "0943254321",
+    "company": "ABC Corp",
+    "companyaddress": "Số 223 Nguyễn Trãi - Thanh Xuân - Hà Nội",
+    "faceImage": "images/cccd1.png",
+    "idPhoto": "images/cccd2.png",
+    "companyPhoto": "images/employeeidcard1.png",
+    "status": 1
+  }
 ]
-  
