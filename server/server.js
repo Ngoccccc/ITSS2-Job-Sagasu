@@ -3,7 +3,9 @@ const morgan = require("morgan");
 const dotenv = require("dotenv");
 const cors = require("cors");
 const connectDB = require("./configs/db.js");
-const authRoutes = require("./routes/authRoutes.js");
+// const authRoutes = require("./routes/authRoutes.js");
+const categoryRoutes = require("./routes/categoryRoutes");
+const recruitmentPostRoutes = require("./routes/recruitmentPostRoutes.js");
 
 dotenv.config();
 
@@ -18,6 +20,8 @@ app.use(express.json());
 
 // Routes
 // app.use("/api/v1/auth", authRoutes);
+app.use("/api/category", categoryRoutes);
+app.use("/api/recruitment", recruitmentPostRoutes);
 
 app.get("/", (req, res) => {
   res.send("<h1>Hello World</h1>");
