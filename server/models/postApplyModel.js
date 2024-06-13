@@ -10,6 +10,9 @@ var postApplySchema = new mongoose.Schema({
   summary: {
     type: String
   },
+  cv:{
+    type: String
+  },
   phone: {
     type: String
   },

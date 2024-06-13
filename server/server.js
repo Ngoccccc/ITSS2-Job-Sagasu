@@ -5,6 +5,8 @@ const cors = require("cors");
 const connectDB = require("./configs/db.js");
 // const authRoutes = require("./routes/authRoutes.js");
 const categoryRoutes = require("./routes/categoryRoutes");
+const userRoute = require("./routes/userRoute");
+const postApplyRoute = require("./routes/postApplyRoute");
 const recruitmentPostRoutes = require("./routes/recruitmentPostRoutes.js");
 
 dotenv.config();
@@ -22,6 +24,8 @@ app.use(express.json());
 // app.use("/api/v1/auth", authRoutes);
 app.use("/api/category", categoryRoutes);
 app.use("/api/recruitment", recruitmentPostRoutes);
+app.use("/api/user", userRoute);
+app.use("/api/post", postApplyRoute);
 
 app.get("/", (req, res) => {
   res.send("<h1>Hello World</h1>");
