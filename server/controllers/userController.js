@@ -77,6 +77,7 @@ module.exports = {
   register,
   // login,
   // getUser,
+  activeUser,
   getUserWithMail,
   getActive
 };

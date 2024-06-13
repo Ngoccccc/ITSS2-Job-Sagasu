@@ -51,6 +51,9 @@ const activeUser = async (email, callback) => {
       return callback({
         errMessage: "There is no registered user with this e-mail.",
       });
+    if(user.status != "active")
+      user.status = "active";
+    await user.save();
     return callback(false, { ...user.toJSON() });
   } catch (error) {
     return callback({
