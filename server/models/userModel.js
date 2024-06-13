@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
-
 // Declare the Schema of the Mongo model
 var userSchema = new mongoose.Schema(
   {
+    avata: {
+      type: String,
+      required: true
+    },
     name: {
       type: String,
       required: true,
@@ -23,6 +26,10 @@ var userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    companyAddress: {
+      type: String,
+      required: true
+    },
     faceImage: {
       type: String,
     },
@@ -42,6 +49,5 @@ var userSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
-
 //Export the model
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model('user', userSchema);
