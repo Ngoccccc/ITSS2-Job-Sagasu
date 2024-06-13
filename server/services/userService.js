@@ -44,6 +44,21 @@ const getActive = async (email, callback) => {
     });
   }
 };
+const activeUser = async (email, callback) => {
+  try {
+    let user = await userModel.findOne({ email });
+    if (!user)
+      return callback({
+        errMessage: "There is no registered user with this e-mail.",
+      });
+    return callback(false, { ...user.toJSON() });
+  } catch (error) {
+    return callback({
+      errMessage: "Something went wrong",
+      details: error.message,
+    });
+  }
+};
 
 
 module.exports = {
@@ -51,6 +66,7 @@ module.exports = {
 //   login,
 //   getUser,
   getActive,
+  activeUser,
   getUserWithMail,
 };
 

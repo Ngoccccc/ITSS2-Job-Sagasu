@@ -26,10 +26,17 @@ const getUserWithMail = async(req,res) => {
     if(err) return res.status(404).send(err);
 
     const dataTransferObject = {
+      _id: result._id,
+      avata: result.avata,
       name: result.name,
-      surname: result.surname,
-      color: result.color,
-      email : result.email
+      email: result.email,
+      phone: result.phone,
+      company: result.company,
+      companyAddress: result.companyAddress,
+      faceImage: result.faceImage,
+      idPhoto: result.idPhoto,
+      companyPhoto: result.companyPhoto,
+      status: result.status,
     };
     return res.status(200).send(dataTransferObject);
   })
@@ -51,6 +58,19 @@ const getActive = async(req,res) => {
   })
 }
 
+const activeUser = async(req,res) => {
+  const {email} = req.body;
+  await userService.activeUser(email,(err,result)=>{
+    if(err) return res.status(404).send(err);
+
+    const dataTransferObject = {
+      name: result.name,
+      status: result.status,
+      email : result.email
+    };
+    return res.status(200).send(dataTransferObject);
+  })
+}
 
 
 module.exports = {
