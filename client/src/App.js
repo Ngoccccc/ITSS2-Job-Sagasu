@@ -5,6 +5,7 @@ import JobInfo from "./pages/JobInfo";
 import VerifyUser from "./pages/VerifyUser";
 import CreateSearchJobPost from "./pages/CreateSearchJobPost";
 import MyPost from "./pages/MyPost";
+import AllowPost from "./pages/employers/AllowPost";
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/verify-user" element={<VerifyUser />} />
         <Route path="/create-post" element={<CreateSearchJobPost />} />
         <Route path="/my-post" element={<MyPost />} />
+        <Route path="/employers-post" element={<AllowPost />} />
       </Routes>
     </>
   );
