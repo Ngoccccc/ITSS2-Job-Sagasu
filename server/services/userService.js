@@ -51,7 +51,21 @@ const activeUser = async (email, callback) => {
       return callback({
         errMessage: "There is no registered user with this e-mail.",
       });
+    if(user.status != "active")
+      user.status = "active";
+    await user.save();
     return callback(false, { ...user.toJSON() });
+  } catch (error) {
+    return callback({
+      errMessage: "Something went wrong",
+      details: error.message,
+    });
+  }
+};
+const getInactiveUser = async (callback) => {
+  try {
+    let users = await userModel.find({ status: "inactive" }).select('-password');
+    return callback(false, users.map(user => user.toJSON()));
   } catch (error) {
     return callback({
       errMessage: "Something went wrong",
@@ -65,6 +79,7 @@ module.exports = {
   register,
 //   login,
 //   getUser,
+  getInactiveUser,
   getActive,
   activeUser,
   getUserWithMail,
