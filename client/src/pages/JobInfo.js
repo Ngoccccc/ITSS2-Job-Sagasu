@@ -17,14 +17,6 @@ const JobInfo = () => {
   return (
     <div>
       <Layout />
-      <div className="search-container">
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleSearch}
-          placeholder="Search for jobs..."
-        />
-      </div>
       <ListJob searchTerm={searchTerm} />
     </div>
   );
