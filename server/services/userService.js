@@ -62,12 +62,24 @@ const activeUser = async (email, callback) => {
     });
   }
 };
+const getInactiveUser = async (callback) => {
+  try {
+    let users = await userModel.find({ status: "inactive" }).select('-password');
+    return callback(false, users.map(user => user.toJSON()));
+  } catch (error) {
+    return callback({
+      errMessage: "Something went wrong",
+      details: error.message,
+    });
+  }
+};
 
 
 module.exports = {
   register,
 //   login,
 //   getUser,
+  getInactiveUser,
   getActive,
   activeUser,
   getUserWithMail,

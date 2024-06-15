@@ -72,12 +72,20 @@ const activeUser = async(req,res) => {
   })
 }
 
+const getInactiveUser = async(req,res) => {
+  await userService.getInactiveUser((err,result)=>{
+    if(err) return res.status(404).send(err);
+    return res.status(200).send(result);
+  })
+}
+
 
 module.exports = {
   register,
   // login,
   // getUser,
   activeUser,
+  getInactiveUser,
   getUserWithMail,
   getActive
 };
