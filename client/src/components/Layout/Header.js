@@ -132,7 +132,7 @@ function AppAppBar() {
                   sx={{ borderColor: "black" }}
                 />
                 <MenuItem sx={{ py: "6px", px: "12px" }}>
-                  <NavLink to="/dashboard/favorite" className="nav-link">
+                  <NavLink to="/create-post" className="nav-link">
                     <Grid sx={{ display: "flex", alignItems: "center" }}>
                       Đăng bài tìm việc
                     </Grid>
@@ -167,13 +167,6 @@ function AppAppBar() {
                   flexItem
                   sx={{ borderColor: "black" }}
                 />
-                <MenuItem sx={{ py: "6px", px: "12px" }}>
-                  <NavLink to="/create-post" className="nav-link">
-                    <Grid sx={{ display: "flex", alignItems: "center" }}>
-                      Tạo bài tìm việc
-                    </Grid>
-                  </NavLink>
-                </MenuItem>
               </Box>
             </Box>
             <Box

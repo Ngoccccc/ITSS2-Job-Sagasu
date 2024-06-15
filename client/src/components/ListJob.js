@@ -213,11 +213,7 @@ const JobList = () => {
           <List.Item key={item._id}>
             <Row className="job-list-item">
               <Col span={4}>
-                <img
-                  width={100}
-                  alt="logo"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk7REqw7jqtkLlQq7bmE9ctf2VF57Ttq7HCg&s"
-                />
+                <img width={100} alt="logo" src={item.image} />
               </Col>
               <Col span={16}>
                 <h3 className="job-title">
@@ -235,13 +231,6 @@ const JobList = () => {
                 <Button className="button-submit" type="primary">
                   Ứng tuyển
                 </Button>
-                <div className="icon-heart">
-                  <IconText
-                    icon={HeartOutlined}
-                    text=""
-                    key="list-vertical-star-o"
-                  />
-                </div>
               </Col>
             </Row>
           </List.Item>
