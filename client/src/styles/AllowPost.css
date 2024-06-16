@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.alert-popup{
+    width: 90%;
+}
+
+.button-post{
+    margin-top: 10%;
+    justify-content: center;
+  }
