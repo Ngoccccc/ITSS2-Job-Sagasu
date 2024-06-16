@@ -155,18 +155,6 @@ function AppAppBar() {
                   flexItem
                   sx={{ borderColor: "black" }}
                 />
-                <MenuItem sx={{ py: "6px", px: "12px" }}>
-                  <NavLink to="/verify-user" className="nav-link">
-                    <Grid sx={{ display: "flex", alignItems: "center" }}>
-                      Xác thực người dùng
-                    </Grid>
-                  </NavLink>
-                </MenuItem>
-                <Divider
-                  orientation="vertical"
-                  flexItem
-                  sx={{ borderColor: "black" }}
-                />
               </Box>
             </Box>
             <Box

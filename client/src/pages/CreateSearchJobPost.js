@@ -21,6 +21,7 @@ import axios from "axios";
 import app from "../firebase";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import apiURL from "../instances/apiConfig";
 const CreateSearchJobPost = () => {
   const storage = getStorage(app);
   const navigate = useNavigate();
@@ -113,7 +114,7 @@ const CreateSearchJobPost = () => {
     }));
     console.log(jobPost);
     try {
-      const data = await axios.post(`api/post/create`, jobPost);
+      const data = await axios.post(`${apiURL}/api/post/create`, jobPost);
       console.log(data);
       setLoading(false);
       toast.success("Tạo bài tìm việc thành công");

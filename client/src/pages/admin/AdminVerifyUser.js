@@ -4,6 +4,7 @@ import { List, Space, Row, Col, Button, Tag } from "antd";
 import "../../styles/JobInfo.css";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import apiURL from "../../instances/apiConfig";
 
 const AdminVerifyUser = () => {
   const navigate = useNavigate();
@@ -11,7 +12,9 @@ const AdminVerifyUser = () => {
 
   const getUsers = async () => {
     try {
-      const response = await axios.get(`/api/user/admin/get-inactive-user`);
+      const response = await axios.get(
+        `${apiURL}/api/user/admin/get-inactive-user`
+      );
       console.log("Response data:", response.data);
       if (response.data && Array.isArray(response.data)) {
         setUsers(response.data);

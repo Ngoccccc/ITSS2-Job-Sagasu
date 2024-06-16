@@ -3,7 +3,7 @@ import "../styles/AllowPost.css";
 import Alert from "@mui/material/Alert";
 import Button from "@mui/material/Button";
 import axios from "axios";
-
+import apiURL from "../instances/apiConfig";
 const UseAllowPost = () => {
   const [useInfo, setUseInfo] = useState([]);
 
@@ -13,7 +13,10 @@ const UseAllowPost = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.post(`/api/user/get-active-user`, postData);
+      const response = await axios.post(
+        `${apiURL}/api/user/get-active-user`,
+        postData
+      );
       console.log("Response data:", response.data);
       if (response.data) {
         setUseInfo(response.data);

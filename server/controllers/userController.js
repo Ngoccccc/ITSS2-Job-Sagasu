@@ -3,7 +3,19 @@ const userService = require("../services/userService");
 const auth = require("../middlewares/auth");
 
 const register = async (req, res) => {
-  const { avata, name, email, phone, company, password, companyaddress, faceImage, idPhoto, companyPhoto, status } = req.body;
+  const {
+    avata,
+    name,
+    email,
+    phone,
+    company,
+    password,
+    companyaddress,
+    faceImage,
+    idPhoto,
+    companyPhoto,
+    status,
+  } = req.body;
   if (!(avata && name && email))
     return res
       .status("400")
@@ -19,11 +31,10 @@ const register = async (req, res) => {
   });
 };
 
-
-const getUserWithMail = async(req,res) => {
-  const {email} = req.body;
-  await userService.getUserWithMail(email,(err,result)=>{
-    if(err) return res.status(404).send(err);
+const getUserWithMail = async (req, res) => {
+  const { email } = req.body;
+  await userService.getUserWithMail(email, (err, result) => {
+    if (err) return res.status(404).send(err);
 
     const dataTransferObject = {
       _id: result._id,
@@ -39,47 +50,43 @@ const getUserWithMail = async(req,res) => {
       status: result.status,
     };
     return res.status(200).send(dataTransferObject);
-  })
-}
+  });
+};
 
-
-
-const getActive = async(req,res) => {
-  const {email} = req.body;
-  await userService.getUserWithMail(email,(err,result)=>{
-    if(err) return res.status(404).send(err);
+const getActive = async (req, res) => {
+  const { email } = req.body;
+  await userService.getUserWithMail(email, (err, result) => {
+    if (err) return res.status(404).send(err);
 
     const dataTransferObject = {
       name: result.name,
       status: result.status,
-      email : result.email
+      email: result.email,
     };
     return res.status(200).send(dataTransferObject);
-  })
-}
+  });
+};
 
-
-const activeUser = async(req,res) => {
-  const {email} = req.body;
-  await userService.activeUser(email,(err,result)=>{
-    if(err) return res.status(404).send(err);
+const activeUser = async (req, res) => {
+  const { email } = req.body;
+  await userService.activeUser(email, (err, result) => {
+    if (err) return res.status(404).send(err);
 
     const dataTransferObject = {
       name: result.name,
       status: result.status,
-      email : result.email
+      email: result.email,
     };
     return res.status(200).send(dataTransferObject);
-  })
-}
+  });
+};
 
-const getInactiveUser = async(req,res) => {
-  await userService.getInactiveUser((err,result)=>{
-    if(err) return res.status(404).send(err);
+const getInactiveUser = async (req, res) => {
+  await userService.getInactiveUser((err, result) => {
+    if (err) return res.status(404).send(err);
     return res.status(200).send(result);
-  })
-}
-
+  });
+};
 
 module.exports = {
   register,
@@ -88,5 +95,5 @@ module.exports = {
   activeUser,
   getInactiveUser,
   getUserWithMail,
-  getActive
+  getActive,
 };

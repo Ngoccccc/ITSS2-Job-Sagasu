@@ -10,8 +10,10 @@ const Sidebar = () => {
 
   useLayoutEffect(() => {
     const path = location.pathname;
-    if (path.startsWith("/admin/verify-user")) {
+    if (path.startsWith("/admin/home")) {
       setSelected("1");
+    } else if (path.startsWith("/admin/verify-user")) {
+      setSelected("2");
     }
   }, [location.pathname]);
 
@@ -19,6 +21,9 @@ const Sidebar = () => {
     setSelected(key);
     switch (key) {
       case "1":
+        navigate("/admin/home");
+        break;
+      case "2":
         navigate("/admin/verify-user");
         break;
       default:
@@ -36,6 +41,11 @@ const Sidebar = () => {
         items={[
           {
             key: "1",
+            icon: <FaLeaf />,
+            label: "Trang chủ",
+          },
+          {
+            key: "2",
             icon: <FaLeaf />,
             label: "Xác thực người dùng",
           },

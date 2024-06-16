@@ -6,6 +6,7 @@ import dayjs from "dayjs";
 import axios from "axios";
 import Layout from "../components/Layout/Layout";
 import { useNavigate } from "react-router-dom";
+import apiURL from "../instances/apiConfig";
 const IconText = ({ icon, text }) => (
   <Space>
     {React.createElement(icon)}
@@ -19,7 +20,7 @@ const MyPost = () => {
 
   const getPosts = async () => {
     try {
-      const response = await axios.get(`/api/post/all-post`);
+      const response = await axios.get(`${apiURL}/api/post/all-post`);
       console.log("Response data:", response.data);
       if (response.data && Array.isArray(response.data)) {
         setListJob(response.data);

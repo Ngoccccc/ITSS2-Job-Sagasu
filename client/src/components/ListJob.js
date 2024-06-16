@@ -15,6 +15,7 @@ import {
 import "../styles/JobInfo.css";
 import dayjs from "dayjs";
 import axios from "axios";
+import apiURL from "../instances/apiConfig";
 
 const { Option } = Select;
 
@@ -36,7 +37,7 @@ const JobList = () => {
 
   const getPosts = async () => {
     try {
-      const response = await axios.get(`/api/recruitment/get-posts`);
+      const response = await axios.get(`${apiURL}/api/recruitment/get-posts`);
       console.log("Response data:", response.data);
       if (response.data && Array.isArray(response.data)) {
         setListJob(response.data);
