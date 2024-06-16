@@ -12,6 +12,7 @@ body {
   margin-bottom: 16px;
   display: flex;
   align-items: center;
+  background-color: #fff;
 }
 
 .job-title {

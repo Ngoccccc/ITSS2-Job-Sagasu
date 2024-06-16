@@ -6,6 +6,8 @@ import VerifyUser from "./pages/VerifyUser";
 import CreateSearchJobPost from "./pages/CreateSearchJobPost";
 import MyPost from "./pages/MyPost";
 import AllowPost from "./pages/employers/AllowPost";
+import AdminVerifyUser from "./pages/admin/AdminVerifyUser";
+import AdminLayout from "./components/Layout/Admin/Layout";
 function App() {
   return (
     <>
@@ -17,6 +19,9 @@ function App() {
         <Route path="/create-post" element={<CreateSearchJobPost />} />
         <Route path="/my-post" element={<MyPost />} />
         <Route path="/employers-post" element={<AllowPost />} />
+        <Route path="/admin">
+          <Route path="verify-user" element={<AdminVerifyUser />} />
+        </Route>
       </Routes>
     </>
   );
