@@ -58,6 +58,7 @@ const getActive = async(req,res) => {
   })
 }
 
+
 const activeUser = async(req,res) => {
   const {email} = req.body;
   await userService.activeUser(email,(err,result)=>{
