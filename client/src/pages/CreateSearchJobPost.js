@@ -9,7 +9,8 @@ import {
   Button,
   IconButton,
   FormControl,
-  useStepContext,
+  Select,
+  MenuItem,
 } from "@mui/material";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
@@ -18,8 +19,11 @@ import { Delete, Add, CloudUpload, Close } from "@mui/icons-material";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import axios from "axios";
 import app from "../firebase";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 const CreateSearchJobPost = () => {
   const storage = getStorage(app);
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [cv, setCv] = useState(null);
   const [fileName, setFileName] = useState("");
@@ -50,6 +54,7 @@ const CreateSearchJobPost = () => {
     summary: "",
     phone: "",
     email: "",
+    salary: "",
     experience: [
       { company: "", role: "", start: null, end: null, achievements: "" },
     ],
@@ -111,9 +116,12 @@ const CreateSearchJobPost = () => {
       const data = await axios.post(`api/post/create`, jobPost);
       console.log(data);
       setLoading(false);
+      toast.success("Tạo bài tìm việc thành công");
+      navigate("/my-post");
     } catch (error) {
       console.log(error);
       setLoading(false);
+      alert("Tạo bài đăng không thành công. Vui lòng nhập đẩy đủ thông tin");
     }
   };
 
@@ -135,6 +143,16 @@ const CreateSearchJobPost = () => {
     const newItems = jobPost[field].filter((_, i) => i !== index);
     setJobPost({ ...jobPost, [field]: newItems });
   };
+
+  const salaryOptions = [
+    "5-10 triệu",
+    "10-15 triệu",
+    "15-20 triệu",
+    "20-25 triệu",
+    "30-40 triệu",
+    "40-50 triệu",
+    "Trên 50 triệu",
+  ];
 
   return (
     <Layout>
@@ -558,7 +576,26 @@ const CreateSearchJobPost = () => {
                   </Button>
                 </Grid>
               </Box>
-
+              {/* Thêm mức lương mong muốn */}
+              <Box sx={{ mb: 2 }}>
+                <Typography variant="h6" fontWeight="bold">
+                  Mức lương mong muốn
+                </Typography>
+                <Select
+                  fullWidth
+                  value={jobPost.salary}
+                  onChange={(e) => handleChange("salary", e.target.value)}
+                  margin="normal"
+                  label="Mức lương mong muốn"
+                  required
+                >
+                  {salaryOptions.map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </Box>
               <Grid>
                 <Typography variant="h6" fontWeight="bold" sx={{ mb: 1 }}>
                   Tải CV

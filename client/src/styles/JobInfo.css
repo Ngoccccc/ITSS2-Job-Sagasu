@@ -1,56 +1,56 @@
-body{
-    background-image: linear-gradient(0deg, #ffffff 10%, #ffffff 120%);
-  }
-  .job-list-container {
-    max-width: 80%; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the component */
-  }
-  .job-list-item {
-    border: 1px solid #d9d9d9;
-    border-radius: 5px;
-    padding: 16px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .job-title {
-    margin: 0;
-    color: #1890ff;
-    font-size: 18px;
-    font-weight: 600;
-  }
-  
-  .company-name {
-    color: #8c8c8c;
-  }
-  
-  .job-meta {
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
-    color: #595959;
-  }
-  
-  .job-salary-col {
-    text-align: center;
-  }
-  
-  .job-salary {
-    color: #52c41a;
-    font-size: 16px;
-    margin-bottom: 8px;
-    font-weight: 400;
-  }
-  .button-submit{
-    width: 80%;
-  }
-  .icon-heart {
-    margin-top: 8px;
-    display: flex;
-    justify-content: right;
-    align-items: flex-end;
-    height: 100%;
+body {
+  background-image: linear-gradient(0deg, #ffffff 10%, #ffffff 120%);
+}
+.job-list-container {
+  max-width: 80%; /* Adjust the width as needed */
+  margin: 0 auto; /* Center the component */
+}
+.job-list-item {
+  border: 1px solid #d9d9d9;
+  border-radius: 5px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.job-title {
+  margin: 0;
+  color: #1890ff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.company-name {
+  color: #8c8c8c;
+}
+
+.job-meta {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  color: #595959;
+}
+
+.job-salary-col {
+  text-align: center;
+}
+
+.job-salary {
+  color: #52c41a;
+  font-size: 16px;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+.button-submit {
+  width: 80%;
+}
+.icon-heart {
+  margin-top: 8px;
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  height: 100%;
 }
 .icon-heart .anticon {
   color: #555;
@@ -62,4 +62,11 @@ body{
 .icon-heart .anticon:hover {
   color: #52c41a;
   background-color: #b1cee9;
+}
+
+.add-post-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
 }

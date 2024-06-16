@@ -132,7 +132,7 @@ function AppAppBar() {
                   sx={{ borderColor: "black" }}
                 />
                 <MenuItem sx={{ py: "6px", px: "12px" }}>
-                  <NavLink to="/create-post" className="nav-link">
+                  <NavLink to="/my-post" className="nav-link">
                     <Grid sx={{ display: "flex", alignItems: "center" }}>
                       Đăng bài tìm việc
                     </Grid>
