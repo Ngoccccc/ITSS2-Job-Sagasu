@@ -46,7 +46,7 @@ const Layout = ({
 };
 
 Layout.defaultProps = {
-  title: "Chào các chứng thủ",
+  title: "Welcome to Job sagasu",
   description: "mern stack project",
   keywords: "mern,react,node,mongodb",
   backgroundColor: "#ffffff",
