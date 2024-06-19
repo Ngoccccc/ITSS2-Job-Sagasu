@@ -50,18 +50,30 @@ const CreateSearchJobPost = () => {
   };
 
   const [jobPost, setJobPost] = useState({
-    name: "",
-    title: "",
-    summary: "",
-    phone: "",
-    email: "",
-    salary: "",
+    name: "Lò vi sóng",
+    title: "Tìm công việc lập trình PHP fresher ở tập đoàn big tech",
+    summary: "Đã có 1 năm kinh nghiệm trong lập trình PHP laravel",
+    phone: "0912123212",
+    email: "tanduan@gmail.com",
+    salary: "10-15 triệu",
     experience: [
-      { company: "", role: "", start: null, end: null, achievements: "" },
+      {
+        company: "Sun asterisk",
+        role: "Intern",
+        start: new Date("Sat Jun 19 2021 00:00:00 GMT+0700 (Giờ Đông Dương)"),
+        end: new Date("Sat Apr 19 2022 00:00:00 GMT+0700 (Giờ Đông Dương)"),
+        achievements: "Tham gia dev nhiều dự án thực tế",
+      },
     ],
-    skills: [""],
+    skills: ["PHP", "Red mine", "Laravel"],
     education: [
-      { institution: "", degree: "", start: null, end: null, achievement: "" },
+      {
+        institution: "ĐH Bách Khoa Hà Nội",
+        degree: "CNTT Việt Nhật",
+        start: new Date("Sat Sep 19 2019 00:00:00 GMT+0700 (Giờ Đông Dương)"),
+        end: new Date("Sat Aug 19 2023 00:00:00 GMT+0700 (Giờ Đông Dương)"),
+        achievement: "CPA 3.6",
+      },
     ],
     cv: "",
   });
@@ -128,6 +140,7 @@ const CreateSearchJobPost = () => {
 
   const handleChangeNested = (field, index, key, value) => {
     const newItems = [...jobPost[field]];
+    console.log(value);
     if (field === "skills") {
       newItems[index] = value; // Handle skills as an array of strings
     } else {
